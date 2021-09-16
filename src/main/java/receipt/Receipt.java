@@ -1,21 +1,26 @@
-package src.receipt;
+package receipt;
 import java.util.*;
 
 public class Receipt {
-    private ArrayList<Item> items; 
+
+    private ArrayList<Item> items;
     private double totalCost;
-    private double totalSalesTax; 
+    private double totalSalesTax;
 
     public Receipt(ArrayList<Item> items, double totalCost, double totalSalesTax) {
-        this.items = items; 
+        this.items = items;
         this.totalCost = totalCost;
-        this.totalSalesTax = totalSalesTax; 
+        this.totalSalesTax = totalSalesTax;
     }
 
     public void addItem (Item item) {
-        items.add(item); 
-        totalCost += item.getItemCost(); 
-        totalSalesTax += item.getTaxAmount(); 
+        items.add(item);
+        totalCost += item.getItemCost();
+        totalSalesTax += item.getTaxAmount();
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
     public double getTotalCost() {

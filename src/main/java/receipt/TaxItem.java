@@ -1,12 +1,10 @@
-package src.receipt;
+package receipt;
 
 public class TaxItem extends Item {
-    private String name;
-    private int quantity; 
-    private double baseAmount;
+
     private double taxAmount; 
-    private double itemCost; 
-    private boolean imported; 
+    private double itemCost;
+    private boolean imported;
 
     public TaxItem (String name, int quantity, double baseAmount) {
         super(name, quantity, baseAmount); 
@@ -20,9 +18,7 @@ public class TaxItem extends Item {
             this.itemCost = importTaxTotal * quantity; 
         } else {
             this.taxAmount = salesTax; 
-            this.itemCost = salesTaxTotal * quantity; 
-            
-           
+            this.itemCost = salesTaxTotal * quantity;
         }
 
        

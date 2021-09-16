@@ -1,4 +1,4 @@
-package src.receipt;
+package receipt;
 import java.io.FileInputStream;
 import java.io.*;
 import java.util.*; 
@@ -25,8 +25,9 @@ public class InputReader {
                     }
                   
                 }
+                Item item = new Item(name, qty, basePrice);
                 
-                cat.MatchCategory(name, qty, basePrice, receipt);
+                cat.matchCategory(item, receipt);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File does not exist!");

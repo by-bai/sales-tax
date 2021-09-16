@@ -1,4 +1,4 @@
-package src.receipt;
+package receipt;
 
 public class Item {
     private String name;
@@ -31,7 +31,7 @@ public class Item {
     }
 
     public String getName() {
-        return name; 
+        return name;
     }
 
     public String toString() {
