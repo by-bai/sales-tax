@@ -9,5 +9,8 @@
         <module name="salestax" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="salestax" target="15" />
+    </bytecodeTargetLevel>
   </component>
 </project>
