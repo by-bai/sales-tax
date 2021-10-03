@@ -11,14 +11,12 @@ class InputReaderTest {
 
     @Test
     public void throw_exception_if_file_does_not_exist() {
-        // Test Failed https://stackoverflow.com/questions/2469911/how-do-i-assert-my-exception-message-with-junit-test-annotation
-        FileNotFoundException exception = assertThrows(FileNotFoundException.class,
-                () -> { throw new FileNotFoundException("File does not exist!"); });
-        assertEquals(InputReader.readFile("hello.txt"), exception.getMessage());
+        assertThrows(FileNotFoundException.class,
+                () -> InputReader.readFile("hello.txt"));
     }
 
     @Test
-    public void return_list_of_items_if_file_exists() {
+    public void return_list_of_items_if_file_exists() throws FileNotFoundException {
         assertFalse(InputReader.readFile("./data/input1.txt").isEmpty());
     }
 

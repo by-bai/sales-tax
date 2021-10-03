@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class InputReader {
 
-    public static List<Item> readFile(String filename){
+    public static List<Item> readFile(String filename) throws FileNotFoundException {
 
         List<Item> itemList = new ArrayList<>();
 
-        try(Scanner fileSc = new Scanner(new FileInputStream(filename))) {
+        Scanner fileSc = new Scanner(new FileInputStream(filename));
             fileSc.useDelimiter(",|\r\n|\n");
 
             while (fileSc.hasNext()) {
@@ -36,9 +36,7 @@ public class InputReader {
                 itemList.add(item);
 
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File does not exist!");
-        }
+
         return itemList;
     }
 
